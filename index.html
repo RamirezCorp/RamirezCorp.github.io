@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .gallery img {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .gallery img {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="./img/1.jpg" alt="Index Image" loading="lazy">
+        <img src="./img/2.jpg" alt="Welcome Image">
+        <img src="./img/3.jpg" alt="Coco Hello Cocobar benefit"loading="lazy" >
+        <img src="./img/4.jpg" alt="Kolabora benefit" loading="lazy" >
+        <img src="./img/5.jpg" alt="Ciamso benefit" loading="lazy">
+        <img src="./img/6.jpg" alt="Rumah cocota benefits" loading="lazy" >
+        <img src="./img/7.jpg" alt="Murni Ban benefit" loading="lazy">
+        <img src="./img/8.jpg" alt="Xpert-60 benefit" loading="lazy">
+        <img src="./img/9.jpg" alt="Gloss and Go benefit" loading="lazy">
+        <img src="./img/10.jpg" alt="Auto Point benefit" loading="lazy">
+        
+    </div>
+</body>
+</html>
