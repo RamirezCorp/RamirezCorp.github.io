@@ -94,7 +94,7 @@
 <body>
     <div class="splash-screen" id="splashScreen">
         Welcome To the Blink VIP Club
-        <span class="name">Bagas Saadilah</span>
+        <span class="name" id="userName">Bagas Saadilah</span>
     </div>
     <div class="gallery">
         <img src="./img/1.png" alt="Index Image" loading="lazy">
@@ -110,24 +110,26 @@
         <img src="./img/11.png" alt="speedui.id benefit" loading="lazy">
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-              function getUrlParameter(name) {
-                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-                var results = regex.exec(location.search);
-                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-            }
+         document.addEventListener("DOMContentLoaded", function () {
+                // Function to get URL parameter
+                function getUrlParameter(name) {
+                    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                    const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                    const results = regex.exec(location.search);
+                    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+                }
 
-            // Get the user parameter from the URL
-            var user = getUrlParameter('user');
-            // Set the user parameter as the name
-            if (user) {
-                document.getElementById('userName').textContent = user;
-            }
-            setTimeout(function () {
-                document.getElementById('splashScreen').classList.add('hidden');
-            }, 3000); // Display splash screen for 3 seconds
-        });
+                // Get user parameter from URL
+                const user = getUrlParameter('user');
+                if (user) {
+                    document.getElementById('userName').textContent = user;
+                }
+
+                // Hide splash screen after 3 seconds
+                setTimeout(function () {
+                    document.getElementById('splashScreen').classList.add('hidden');
+                }, 3000);
+            });
     </script>
 </body>
 
