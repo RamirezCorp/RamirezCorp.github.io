@@ -117,8 +117,7 @@
     </div>
     <script>
         let currentUrl = new URL(window.location.href);
-        let string = "?usercf8c1d4e872d9febdf24562748f1724d";
-        let valueAfterUser = string.split("?user")[1];
+        let valueAfterUser = currentUrl.search.split("?user")[1];
         console.log(valueAfterUser)
         document.addEventListener("DOMContentLoaded", function () {
             let nama='';
