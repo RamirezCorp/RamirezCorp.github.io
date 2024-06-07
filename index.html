@@ -116,6 +116,10 @@
         <img src="./img/11.png" alt="speedui.id benefit" loading="lazy">
     </div>
     <script>
+        let currentUrl = new URL(window.location.href);
+        let string = "?usercf8c1d4e872d9febdf24562748f1724d";
+        let valueAfterUser = string.split("?user")[1];
+        console.log(valueAfterUser)
         document.addEventListener("DOMContentLoaded", function () {
             let nama='';
             // Function to get URL parameter
