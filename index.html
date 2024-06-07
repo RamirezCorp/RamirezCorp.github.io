@@ -118,20 +118,8 @@
     <script>
         let currentUrl = new URL(window.location.href);
         let valueAfterUser = currentUrl.search.split("?user")[1];
-        console.log(valueAfterUser)
         document.addEventListener("DOMContentLoaded", function () {
-            let nama='';
-            // Function to get URL parameter
-            function getUrlParameter(name) {
-                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-                const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-                const results = regex.exec(location.search);
-                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-            }
-
-            // Get user parameter from URL
-            const hash_md5 = getUrlParameter('user'); // Replace with actual hash_md5 value
-            const fetchUrl = `https://script.google.com/macros/s/AKfycbzdKpo3R4vhOpeHgG3tpvd5yzJE349Xnf8futm3XB-npYvTT4aCBioSaQgPbD9wibZq/exec?hash_md5=${hash_md5}`;
+            const fetchUrl = `https://script.google.com/macros/s/AKfycbzdKpo3R4vhOpeHgG3tpvd5yzJE349Xnf8futm3XB-npYvTT4aCBioSaQgPbD9wibZq/exec?hash_md5=${valueAfterUser}`;
 
             // Perform fetch request
             fetch(fetchUrl)
@@ -151,14 +139,14 @@
                 .finally(() => {
                     // Show page after fetch is complete
                     document.body.style.visibility = 'visible';
-                    if(nama){
+                    if(valueAfterUser){
                         setTimeout(function () {
                             document.getElementById('splashScreen').classList.add('hidden');
                         }, 3000);
                     }else{
                         setTimeout(function () {
                             document.getElementById('splashScreen').classList.add('hidden');
-                        }, 0);
+                        }, 1);
                     }
                     // Hide splash screen after 3 seconds
                     
