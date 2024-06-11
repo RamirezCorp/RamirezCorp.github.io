@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Image Gallery</title>
+    <title>Blink Card Member</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
@@ -83,7 +83,8 @@
             z-index: 1000;
             transition: opacity 2s ease-in-out, visibility 2s ease-in-out;
         }
-         @media (max-width: 768px) {
+
+        @media (max-width: 768px) {
             .splash-screen {
                 font-size: 1.5em;
             }
@@ -120,11 +121,14 @@
         <img src="./img/4.png" alt="Kolabora benefit" loading="lazy">
         <img src="./img/5.png" alt="Ciamso benefit" loading="lazy">
         <img src="./img/6.png" alt="Rumah cocota benefits" loading="lazy">
-        <img src="./img/7.png" alt="Murni Ban benefit" loading="lazy">
-        <img src="./img/8.png" alt="Xpert-60 benefit" loading="lazy">
-        <img src="./img/9.png" alt="Gloss and Go benefit" loading="lazy">
-        <img src="./img/10.png" alt="Auto Point benefit" loading="lazy">
-        <img src="./img/11.png" alt="speedui.id benefit" loading="lazy">
+        <img src="./img/7.png" alt="Kalma Resto benefits" loading="lazy">
+        <img src="./img/8.png" alt="Murni Ban benefit" loading="lazy">
+        <img src="./img/9.png" alt="Xpert-60 benefit" loading="lazy">
+        <img src="./img/10.png" alt="Gloss and Go benefit" loading="lazy">
+        <img src="./img/11.png" alt="Auto Point benefit" loading="lazy">
+        <img src="./img/12.png" alt="speedupp.id benefit" loading="lazy">
+        <img src="./img/12.png" alt="Join" loading="lazy">
+
     </div>
     <script>
         let currentUrl = new URL(window.location.href);
@@ -138,7 +142,7 @@
                 .then(data => {
                     if (data.status === 'success') {
                         document.getElementById('userName').textContent = data.nama_user;
-                        nama=data.nama_user
+                        nama = data.nama_user
                     } else {
                         // document.getElementById('userName').textContent = 'Guest';
                     }
@@ -150,17 +154,17 @@
                 .finally(() => {
                     // Show page after fetch is complete
                     document.body.style.visibility = 'visible';
-                    if(valueAfterUser){
+                    if (valueAfterUser) {
                         setTimeout(function () {
                             document.getElementById('splashScreen').classList.add('hidden');
                         }, 3000);
-                    }else{
+                    } else {
                         setTimeout(function () {
                             document.getElementById('splashScreen').classList.add('hidden');
                         }, 1);
                     }
                     // Hide splash screen after 3 seconds
-                    
+
                 });
         });
     </script>
